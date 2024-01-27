@@ -29,13 +29,12 @@ let tasks = [
     {id: 2, title: 'My title 2', completed: false,},
     {id: 3, title: 'My title 3', completed: false,},
     {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
+    {id: 5, title: 'My title 5', completed: false,},
+    {id: 6, title: 'My title 6', completed: false,},
+    {id: 7, title: 'My title 7', completed: false,},
+    {id: 8, title: 'My title 8', completed: false,},
+    {id: 9, title: 'My title 9', completed: false,},
+    {id: 10, title: 'My title 10', completed: false,},
 ];
 
 function renderTasks(taskList) {
@@ -76,8 +75,8 @@ function renderTasks(taskList) {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     removeErrors();
-    if (taskInput.value === '') {
-        showError(taskInput, 'Error message');
+    if (taskInput.value.trim() === '') {
+        showError(taskInput, 'This field is not be empty');
         taskInput.closest('.input').classList.add('input_errored')
     } else {
         const newTask = {
