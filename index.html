@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Todolist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="modal">
+    <div class="modal__container">
+        <p class="modal__text">
+            Are you sure you want to delete all tasks?
+        </p>
+        <div class="modal__buttons">
+            <button class="modal__button modal__cancel">Cancel</button>
+            <button class="modal__button modal__confirm">Confirm</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <form action="#" class="form">
+        <div class="form-control">
+            <div class="input">
+                <input placeholder="Add your task..." type="text" class="task-input"/>
+                <i class="fa fa-times"></i>
+            </div>
+            <button type="submit" class="submit-btn">
+                +Add task
+            </button>
+        </div>
+        <div class="form-control form-buttons">
+            <button class="reset-button" type="button">Delete All</button>
+            <button type="button" class="theme-toggle__button">
+                <i class="fa fa-sun"></i>
+            </button>
+        </div>
+    </form>
+    <div class="input search-input">
+        <i class="fa fa-search"></i>
+        <input placeholder="Search task" type="text">
+    </div>
+    <div class="tasks__container"></div>
+
+</div>
+
+
+<script src="assets/js/index.js"></script>
+
+</body>
+</html>
