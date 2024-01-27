@@ -118,11 +118,11 @@ tasksContainer.addEventListener('click', (event) => {
     const taskText = task.querySelector('.task__text');
     if (target.classList.contains('fa-times')) {
         tasks = tasks.filter(task => task.id !== taskId);
-        renderTasks();
+        renderTasks(tasks); // Update the tasks displayed on the screen
         saveTasks();
     }
 
-    if (target.classList.contains('fa-edit')) {
+    if (target.classList.contains('fa-edit') || taskText) {
 
         taskText.setAttribute('contenteditable', 'true');
 
