@@ -185,6 +185,10 @@ small.error {
 .tasks__container .task__field .task__text:focus-visible {
   outline: 1px solid #acacac;
 }
+.tasks__container .task__field .task__text.task__completed {
+  text-decoration: line-through;
+  color: #9A9292;
+}
 .tasks__container .task__field .task__icons {
   display: flex;
   justify-content: space-between;
@@ -219,10 +223,6 @@ small.error {
 }
 .tasks__container .task__field i:last-child {
   margin-right: 0;
-}
-
-.task__text.task__completed {
-  text-decoration: line-through !important;
 }
 
 .modal {

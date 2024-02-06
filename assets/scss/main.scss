@@ -204,6 +204,11 @@ small.error {
       }
 
     }
+    .task__text.task__completed {
+      text-decoration: line-through;
+      color: #9A9292;
+
+    }
     .task__icons{
       display: flex;
       justify-content: space-between;
@@ -244,9 +249,7 @@ small.error {
   }
 }
 
-.task__text.task__completed {
-  text-decoration: line-through !important;
-}
+
 
 
 .modal{

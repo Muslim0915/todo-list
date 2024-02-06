@@ -58,7 +58,7 @@ function renderTasks(taskList) {
                     <button class="check">
                     <i class="fa fa-check"></i>
                     </button>
-</button>
+                    </button>
                     <i class="fa fa-times"></i>
                 </div>
             </div>
@@ -122,7 +122,7 @@ tasksContainer.addEventListener('click', (event) => {
         saveTasks();
     }
 
-    if (target.classList.contains('fa-edit') || taskText) {
+    if (target.classList.contains('fa-edit')) {
 
         taskText.setAttribute('contenteditable', 'true');
 
@@ -139,7 +139,7 @@ tasksContainer.addEventListener('click', (event) => {
         });
     }
 
-    if (target.classList.contains('fa-check-circle')) {
+    if (target.classList.contains('fa-check')) {
             taskText.classList.toggle('task__completed');
     }
 
@@ -163,6 +163,7 @@ resetBtn.addEventListener('click', () => {
         tasks = [];
         renderTasks();
         modalClose();
+        saveTasks();
     });
     modalCancel.addEventListener('click', () => {
         modalClose();
