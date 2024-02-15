@@ -38,18 +38,7 @@ function checkDarkMode() {
     }
 }
 
-let tasks = [
-    {id: 1, title: 'My title 1', completed: false,},
-    {id: 2, title: 'My title 2', completed: false,},
-    {id: 3, title: 'My title 3', completed: false,},
-    {id: 4, title: 'My title 4', completed: false,},
-    {id: 5, title: 'My title 5', completed: false,},
-    {id: 6, title: 'My title 6', completed: false,},
-    {id: 7, title: 'My title 7', completed: false,},
-    {id: 8, title: 'My title 8', completed: false,},
-    {id: 9, title: 'My title 9', completed: false,},
-    {id: 10, title: 'My title 10', completed: false,},
-];
+let tasks = [];
 
 function renderTasks(taskList) {
     tasksContainer.innerHTML = '';
