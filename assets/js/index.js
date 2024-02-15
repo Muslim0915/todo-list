@@ -14,15 +14,29 @@ inputResetBtn.addEventListener('click', () => {
 })
 
 theme_toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    if (theme_toggle.classList.contains('fa-sun')) {
+    const isDarkMode = document.body.classList.toggle('dark-theme');
+    if (isDarkMode){
         theme_toggle.classList.remove('fa-sun')
         theme_toggle.classList.add('fa-moon')
-    } else {
+        localStorage.setItem('isDarkMode', 'true');
+    }
+     else {
+        theme_toggle.classList.add('fa-sun')
+        theme_toggle.classList.remove('fa-moon')
+        localStorage.removeItem('isDarkMode')
+    }
+});
+function checkDarkMode() {
+    if (localStorage.getItem('isDarkMode') === 'true'){
+        document.body.classList.add('dark-theme');
+        theme_toggle.classList.remove('fa-sun')
+        theme_toggle.classList.add('fa-moon');
+    }
+    else {
         theme_toggle.classList.add('fa-sun')
         theme_toggle.classList.remove('fa-moon')
     }
-})
+}
 
 let tasks = [
     {id: 1, title: 'My title 1', completed: false,},
@@ -66,8 +80,6 @@ function renderTasks(taskList) {
             tasksContainer.appendChild(taskElement);
         });
     }
-
-
 
 
 }
@@ -140,7 +152,7 @@ tasksContainer.addEventListener('click', (event) => {
     }
 
     if (target.classList.contains('fa-check')) {
-            taskText.classList.toggle('task__completed');
+        taskText.classList.toggle('task__completed');
     }
 
 
@@ -153,6 +165,7 @@ function modalOpen() {
 function modalClose() {
     modal.classList.remove('modal_opened');
 }
+
 resetBtn.addEventListener('click', () => {
     if (tasks.length > 0) {
         modalOpen();
@@ -179,12 +192,17 @@ searchInput.addEventListener('input', (event) => {
 window.onload = () => {
     loadTasks();
     renderTasks(tasks);
+    checkDarkMode();
 };
 
 
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
+
+
+
+
 
 function loadTasks() {
     const savedTasks = localStorage.getItem('tasks');
